@@ -1,0 +1,14 @@
+<h1>Searching for - <%= @search_term %></h1>
+
+<table border="1">
+  <tr>
+  	<th>Slug</th>
+  	<th>Name</th>
+  </tr>
+  <% @courses.each do |course| %>
+    <tr class=<%= cycle('even', 'odd') %>>
+      <td><%= course["slug"] %></td>
+      <td><%= course["name"] %></td>
+    </tr>
+  <% end %>
+</table>
