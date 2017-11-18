@@ -2,12 +2,14 @@
 
 <table border ="1">
 	<tr>
+		<th>Image</th>
 		<th>Publisher</th>
 		<th>Title</th>
 		<th>Social Rank</th>
 	</tr>
 	<% @recipes.each do |recipe|%>
 		<tr class=<%= cycle('even','odd') %>>
+			<td><%= image_tag(recipe["image_url"], size:"120x100", alt:"image") %></td>
 			<td><%= recipe["publisher"] %></td>
 			<td><%= recipe["title"] %></td>
 			<td><%= format_2dec(recipe["social_rank"]) %></td>
