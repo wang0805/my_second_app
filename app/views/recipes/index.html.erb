@@ -1,0 +1,16 @@
+<h1>Searching for Recipes</h1>
+
+<table border ="1">
+	<tr>
+		<th>Publisher</th>
+		<th>Title</th>
+		<th>Social Rank</th>
+	</tr>
+	<% @recipes.each do |recipe|%>
+		<tr class=<%= cycle('even','odd') %>>
+			<td><%= recipe["publisher"] %></td>
+			<td><%= recipe["title"] %></td>
+			<td><%= format_2dec(recipe["social_rank"]) %></td>
+		</tr>
+	<% end %>
+</table>

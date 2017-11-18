@@ -2,7 +2,7 @@ class Coursera
 	include HTTParty
 
   default_options.update(verify: false) # Turn off SSL verification
-  # need the above sentence if not the get function will return an error
+  # default is true and we need to turn off SSL verification for this assignment
   base_uri 'https://api.coursera.org/api/courses.v1'
   default_params q: "search"
   format :json
