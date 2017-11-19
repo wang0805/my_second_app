@@ -1,5 +1,10 @@
 <h1>Searching for Recipes</h1>
 
+<% if @recipes.nil? %>
+<p>No recipes found with the search term, please try another term</p>
+
+<% else %>
+
 <table border ="1">
 	<tr>
 		<th>Image</th>
@@ -10,9 +15,12 @@
 	<% @recipes.each do |recipe|%>
 		<tr class=<%= cycle('even','odd') %>>
 			<td><%= image_tag(recipe["image_url"], size:"120x100", alt:"image") %></td>
+<!-- 			http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html#method-i-image_tag -->
 			<td><%= recipe["publisher"] %></td>
 			<td><%= recipe["title"] %></td>
 			<td><%= format_2dec(recipe["social_rank"]) %></td>
 		</tr>
 	<% end %>
 </table>
+
+<% end %>
